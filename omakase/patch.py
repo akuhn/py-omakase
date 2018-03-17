@@ -7,6 +7,7 @@ monkey_patch(list, 'map', lambda sequence, function: map(function, sequence))
 monkey_patch(list, 'filter', lambda sequence, function: filter(function, sequence))
 
 
+monkey_patch(list, 'join', join)
 monkey_patch(list, 'sortby', sortby)
 monkey_patch(list, 'compact', compact)
 monkey_patch(list, 'freq', freq)

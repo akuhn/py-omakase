@@ -1,6 +1,10 @@
 # Functions that I am missing from Ruby
 
 
+def join(sequence, separator):
+    return separator.join(sequence)
+
+
 def sortby(sequence, function):
     return sorted(sequence, key=function)
 

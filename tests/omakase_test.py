@@ -4,29 +4,36 @@ from expects import *
 import omakase
 
 
+def test____should_join_strings():
+    words = "the quick brown fox jumps over the lazy dog".split()
+    string = words.join(', ')
+
+    expect(string).to(equal('the, quick, brown, fox, jumps, over, the, lazy, dog'))
+
+
 def test____should_count_elements():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     num = words.len()
 
     expect(num).to(be(9))
 
 
 def test____should_map_elements():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     array = words.map(len)
 
     expect(array).to(equal([3, 5, 5, 3, 5, 4, 3, 4, 3]))
 
 
 def test____should_filter_elements():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     array = words.filter(lambda each: len(each) < 4)
 
     expect(array).to(equal('the fox the dog'.split()))
 
 
 def test____should_sortby_function():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     array = words.sortby(len)
 
     expect(array).to(equal('the fox the dog over lazy quick brown jumps'.split()))
@@ -40,7 +47,7 @@ def test____should_remove_null_elements():
 
 
 def test____should_count_element_frequency():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     freq = words.freq()
 
     expect(freq['the']).to(be(2))
@@ -48,7 +55,7 @@ def test____should_count_element_frequency():
 
 
 def test____should_count_frequency():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     freq = words.freq(len)
 
     expect(freq[3]).to(be(4))
@@ -57,7 +64,7 @@ def test____should_count_frequency():
 
 
 def test____should_group_by_element():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     group = words.groupby()
 
     expect(group['the']).to(equal('the the'.split()))
@@ -66,7 +73,7 @@ def test____should_group_by_element():
 
 
 def test____should_group_by_mapping():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     group = words.groupby(len)
 
     expect(group[3]).to(equal('the fox the dog'.split()))
@@ -75,7 +82,7 @@ def test____should_group_by_mapping():
 
 
 def test____should_index_by_element():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     index = words.indexby()
 
     expect(index['the']).to(equal('the'))
@@ -84,7 +91,7 @@ def test____should_index_by_element():
 
 
 def test____should_index_by_mapping():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     index = words.indexby(len)
 
     expect(index[3]).to(equal('the'))
@@ -93,21 +100,21 @@ def test____should_index_by_mapping():
 
 
 def test____should_remove_duplicates():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
     array = words.uniq()
 
     expect(array).to(equal('the quick brown fox jumps over lazy dog'.split()))
 
 
 def test____should_keep_first_few_elements_only():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
 
     expect(words.take(3)).to(equal('the quick brown'.split()))
     expect(words.take(9000)).to(equal(words))
 
 
 def test____should_remove_first_few_elements():
-    words = 'the quick brown fox jumps over the lazy dog'.split()
+    words = "the quick brown fox jumps over the lazy dog".split()
 
     expect(words.drop(7)).to(equal('lazy dog'.split()))
     expect(words.drop(9000)).to(equal([]))
