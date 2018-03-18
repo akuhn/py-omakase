@@ -10,10 +10,11 @@ except:
 setup(
   name = 'omakase',
   packages = ['omakase'],
-  version = '0.5.3',
+  version = '0.5.4',
   description = 'My personal functions.',
   long_description = long_description,
   author = 'Adrian Kuhn',
   author_email = 'akuhnplus@gmail.com',
   url = 'https://github.com/akuhn/py-omakase',
+  install_requires = ['forbiddenfruit'],
 )
