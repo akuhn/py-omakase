@@ -1,13 +1,16 @@
 from distutils.core import setup
-import pypandoc
 
+try:
+    import xxxpypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except:
+    long_description = None
 
-long_description = pypandoc.convert('README.md', 'rst')
 
 setup(
   name = 'omakase',
   packages = ['omakase'],
-  version = '0.5.0',
+  version = '0.5.3',
   description = 'My personal functions.',
   long_description = long_description,
   author = 'Adrian Kuhn',

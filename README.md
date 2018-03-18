@@ -15,6 +15,19 @@ My choice of missing python functions.
     list.take(num)
     list.drop(num)
 
+Examples
+
+    $ python
+    >>> import omakase
+    >>> array = 'the quick brown fox jumps over the lazy dog'.split()
+    >>> array.map(len)
+    [3, 5, 5, 3, 5, 4, 3, 4, 3]
+    >>> array.filter(lambda each: each > 'hello worlds')
+    ['the', 'quick', 'jumps', 'over', 'the', 'lazy']
+    >>> array.take(3)
+    ['the', 'quick', 'brown']
+    >>>
+
 ## Installation
 
 To install this package, run
