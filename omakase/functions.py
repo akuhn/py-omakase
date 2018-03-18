@@ -64,3 +64,13 @@ def take(sequence, n):
 
 def drop(sequence, n):
     return sequence[n:]
+
+
+def first(sequence):
+    return sequence[0] if sequence else None
+
+
+def last(sequence):
+    return sequence[-1] if sequence else None
+
+

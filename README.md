@@ -14,6 +14,8 @@ My choice of missing python functions.
     list.uniq()
     list.take(num)
     list.drop(num)
+    list.first()
+    list.last()
 
 Examples
 

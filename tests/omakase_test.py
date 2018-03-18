@@ -118,3 +118,17 @@ def test____should_remove_first_few_elements():
 
     expect(words.drop(7)).to(equal('lazy dog'.split()))
     expect(words.drop(9000)).to(equal([]))
+
+
+def test____should_get_first_element():
+    words = "the quick brown fox jumps over the lazy dog".split()
+
+    expect(words.first()).to(equal('the'))
+    expect([].first()).to(be_none)
+
+
+def test____should_get_last_element():
+    words = "the quick brown fox jumps over the lazy dog".split()
+
+    expect(words.last()).to(equal('dog'))
+    expect([].last()).to(be_none)
