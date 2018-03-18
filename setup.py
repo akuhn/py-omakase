@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 try:
-    import xxxpypandoc
+    import pypandoc
     long_description = pypandoc.convert('README.md', 'rst')
 except:
     long_description = None
@@ -10,7 +10,7 @@ except:
 setup(
   name = 'omakase',
   packages = ['omakase'],
-  version = '0.5.4',
+  version = '0.5.5',
   description = 'My personal functions.',
   long_description = long_description,
   author = 'Adrian Kuhn',
