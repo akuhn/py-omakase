@@ -132,3 +132,24 @@ def test____should_get_last_element():
 
     expect(words.last()).to(equal('dog'))
     expect([].last()).to(be_none)
+
+
+def test____should_get_minimum():
+    array = [7, 35, 41, 1, 26, 12]
+
+    expect(array.min()).to(equal(1))
+    expect([].min()).to(be_none)
+
+
+def test____should_get_maximum():
+    array = [7, 35, 41, 1, 26, 12]
+
+    expect(array.max()).to(equal(41))
+    expect([].max()).to(be_none)
+
+
+def test____should_get_sum():
+    array = [7, 35, 41, 1, 26, 12]
+
+    expect(array.sum()).to(equal(122))
+    expect([].sum()).to(equal(0))

@@ -5,6 +5,9 @@ from omakase.functions import *
 monkey_patch(list, 'len', lambda sequence: len(sequence))
 monkey_patch(list, 'map', lambda sequence, function: map(function, sequence))
 monkey_patch(list, 'filter', lambda sequence, function: filter(function, sequence))
+monkey_patch(list, 'max', lambda sequence: max(sequence) if sequence else None)
+monkey_patch(list, 'min', lambda sequence: min(sequence) if sequence else None)
+monkey_patch(list, 'sum', lambda sequence: sum(sequence))
 
 
 monkey_patch(list, 'join', join)

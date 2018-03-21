@@ -72,5 +72,3 @@ def first(sequence):
 
 def last(sequence):
     return sequence[-1] if sequence else None
-
-
