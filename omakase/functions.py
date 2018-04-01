@@ -72,3 +72,12 @@ def first(sequence):
 
 def last(sequence):
     return sequence[-1] if sequence else None
+
+
+def my_reduce(sequence, function, initial=None):
+    if initial:
+        return reduce(function, sequence, initial)
+    elif not sequence:
+        return None
+    else:
+        return reduce(function, sequence)

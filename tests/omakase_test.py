@@ -101,9 +101,10 @@ def test____should_index_by_mapping():
 
 def test____should_remove_duplicates():
     words = "the quick brown fox jumps over the lazy dog".split()
-    array = words.uniq()
+    expected = 'the quick brown fox jumps over lazy dog'.split()
 
-    expect(array).to(equal('the quick brown fox jumps over lazy dog'.split()))
+    expect(words.uniq()).to(equal(expected))
+    expect([].uniq()).to(equal([]))
 
 
 def test____should_keep_first_few_elements_only():
@@ -153,3 +154,20 @@ def test____should_get_sum():
 
     expect(array.sum()).to(equal(122))
     expect([].sum()).to(equal(0))
+
+
+def test____should_reduce_to_sum():
+    array = [7, 35, 41, 1, 26, 12]
+    fun = lambda a, b: a + b
+
+    expect(array.reduce(fun)).to(equal(122))
+    expect([].reduce(fun)).to(be_none)
+    expect(array.reduce(fun, 5)).to(equal(127))
+    expect([].reduce(fun, 5)).to(equal(5))
+
+
+def test____should_zip():
+    a = [7, 35, 41]
+    b = [1, 26, 12]
+
+    expect(a.zip(b)).to(equal([(7, 1), (35, 26), (41, 12)]))

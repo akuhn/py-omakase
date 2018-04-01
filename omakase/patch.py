@@ -8,6 +8,7 @@ monkey_patch(list, 'filter', lambda sequence, function: filter(function, sequenc
 monkey_patch(list, 'max', lambda sequence: max(sequence) if sequence else None)
 monkey_patch(list, 'min', lambda sequence: min(sequence) if sequence else None)
 monkey_patch(list, 'sum', lambda sequence: sum(sequence))
+monkey_patch(list, 'zip', lambda sequence, other: zip(sequence, other))
 
 
 monkey_patch(list, 'join', join)
@@ -21,3 +22,4 @@ monkey_patch(list, 'take', take)
 monkey_patch(list, 'drop', drop)
 monkey_patch(list, 'first', first)
 monkey_patch(list, 'last', last)
+monkey_patch(list, 'reduce', my_reduce)
