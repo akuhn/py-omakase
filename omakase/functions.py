@@ -74,10 +74,13 @@ def last(sequence):
     return sequence[-1] if sequence else None
 
 
-def my_reduce(sequence, function, initial=None):
-    if initial:
+def my_reduce(sequence, first_argument, second_argument=None):
+    if second_argument:
+        function = second_argument
+        initial = first_argument
         return reduce(function, sequence, initial)
     elif not sequence:
         return None
     else:
+        function = first_argument
         return reduce(function, sequence)

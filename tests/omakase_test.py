@@ -159,11 +159,12 @@ def test____should_get_sum():
 def test____should_reduce_to_sum():
     array = [7, 35, 41, 1, 26, 12]
     fun = lambda a, b: a + b
+    product = lambda a, b: a * b
 
     expect(array.reduce(fun)).to(equal(122))
     expect([].reduce(fun)).to(be_none)
-    expect(array.reduce(fun, 5)).to(equal(127))
-    expect([].reduce(fun, 5)).to(equal(5))
+    expect(array.reduce(1, product)).to(equal(3134040))
+    expect([].reduce(1, product)).to(equal(1))
 
 
 def test____should_zip():

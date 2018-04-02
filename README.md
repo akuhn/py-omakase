@@ -16,6 +16,12 @@ My choice of missing python functions.
     list.drop(num)
     list.first()
     list.last()
+    list.zip()
+    list.min()
+    list.max()
+    list.sum()
+    list.reduce(function)
+    list.reduce(initial, function)
 
 Examples
 
