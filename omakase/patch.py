@@ -2,14 +2,15 @@ from forbiddenfruit import curse as monkey_patch
 from omakase.functions import *
 
 
-monkey_patch(list, 'len', lambda sequence: len(sequence))
-monkey_patch(list, 'map', lambda sequence, function: map(function, sequence))
-monkey_patch(list, 'filter', lambda sequence, function: filter(function, sequence))
-monkey_patch(list, 'max', lambda sequence: max(sequence) if sequence else None)
-monkey_patch(list, 'min', lambda sequence: min(sequence) if sequence else None)
-monkey_patch(list, 'sum', lambda sequence: sum(sequence))
-monkey_patch(list, 'zip', lambda sequence, other: zip(sequence, other))
+for each in [list, dict, tuple]:
 
+    monkey_patch(each, 'len', lambda sequence: len(sequence))
+    monkey_patch(each, 'map', lambda sequence, function: map(function, sequence))
+    monkey_patch(each, 'filter', lambda sequence, function: filter(function, sequence))
+    monkey_patch(each, 'max', lambda sequence: max(sequence) if sequence else None)
+    monkey_patch(each, 'min', lambda sequence: min(sequence) if sequence else None)
+    monkey_patch(each, 'sum', lambda sequence: sum(sequence))
+    monkey_patch(each, 'zip', lambda sequence, other: zip(sequence, other))
 
 monkey_patch(list, 'join', join)
 monkey_patch(list, 'sortby', sortby)

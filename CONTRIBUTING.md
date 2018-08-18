@@ -17,3 +17,7 @@ For my personal use, to deploy this package, run
     twine upload -r test dist/omakase-0.0.0.tar.gz
     pip install -i https://testpypi.python.org/pypi omakase
     twine upload dist/omakase-0.0.0.tar.gz
+
+And then visit the package's website at
+
+- https://pypi.org/project/omakase

@@ -172,3 +172,18 @@ def test____should_zip():
     b = [1, 26, 12]
 
     expect(a.zip(b)).to(equal([(7, 1), (35, 26), (41, 12)]))
+
+
+def test____should_support_dict():
+    h = dict(a=1, b=2, c=3)
+
+    expect(h.len()).to(equal(3))
+    expect(h.map(lambda each: each)).to(contain('a', 'b', 'c'))
+
+
+def test____should_support_tuple():
+    h = ('a', 'b', 'c')
+
+    expect(h.len()).to(equal(3))
+    expect(h.map(lambda each: each)).to(contain('a', 'b', 'c'))
+
