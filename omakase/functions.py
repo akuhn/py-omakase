@@ -1,4 +1,4 @@
-# Functions that I am missing from Ruby
+# Functions that I am missing, mostly inspired from Ruby
 
 
 def join(sequence, separator):
@@ -9,7 +9,7 @@ def sortby(sequence, function):
     return sorted(sequence, key=function)
 
 
-def compact(sequence):
+def compact_sequence(sequence):
     result = []
     for each in sequence:
         if each is None: continue
@@ -17,6 +17,14 @@ def compact(sequence):
 
     return result
 
+def compact_mapping(mapping):
+    result = {}
+    for name in mapping:
+        value = mapping[name]
+        if value is None: continue
+        result[name] = value
+
+    return result
 
 def freq(sequence, function=None):
     mapping = {}
@@ -74,7 +82,7 @@ def last(sequence):
     return sequence[-1] if sequence else None
 
 
-def my_reduce(sequence, first_argument, second_argument=None):
+def reduce_sequence(sequence, first_argument, second_argument=None):
     if second_argument:
         function = second_argument
         initial = first_argument
@@ -84,3 +92,12 @@ def my_reduce(sequence, first_argument, second_argument=None):
     else:
         function = first_argument
         return reduce(function, sequence)
+
+
+def flatten(sequence):
+    result = []
+    for each in sequence:
+        result.extend(each) if isinstance(each, list) else result.append(each)
+
+    return result
+

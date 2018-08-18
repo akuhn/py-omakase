@@ -10,7 +10,7 @@ except:
 setup(
   name = 'omakase',
   packages = ['omakase'],
-  version = '0.7.0',
+  version = '1.0.0',
   description = 'My personal functions.',
   long_description = long_description,
   author = 'Adrian Kuhn',

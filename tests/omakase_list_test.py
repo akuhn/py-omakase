@@ -174,16 +174,9 @@ def test____should_zip():
     expect(a.zip(b)).to(equal([(7, 1), (35, 26), (41, 12)]))
 
 
-def test____should_support_dict():
-    h = dict(a=1, b=2, c=3)
+def test____should_flatten():
+    array = ['the', ['quick', 'brown', 'fox'], ['jumps', 'over'], 'the', ['lazy', 'dog']]
+    words = array.flatten()
 
-    expect(h.len()).to(equal(3))
-    expect(h.map(lambda each: each)).to(contain('a', 'b', 'c'))
-
-
-def test____should_support_tuple():
-    h = ('a', 'b', 'c')
-
-    expect(h.len()).to(equal(3))
-    expect(h.map(lambda each: each)).to(contain('a', 'b', 'c'))
+    expect(words).to(equal("the quick brown fox jumps over the lazy dog".split()))
 
