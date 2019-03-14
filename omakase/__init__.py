@@ -20,6 +20,8 @@ patch(list, 'join', join)
 patch(list, 'sortby', sortby)
 patch(list, 'sorted', lambda self: sorted(self))
 patch(list, 'reduce', reduce_sequence)
+patch(list, 'percentile', percentile)
+patch(list, 'percentiles', percentiles)
 
 patch(list, 'filter', lambda self, function: filter(function, self))
 patch(list, 'compact', compact_sequence)
@@ -50,6 +52,8 @@ patch(tuple, 'join', join)
 patch(tuple, 'sortby', sortby)
 patch(tuple, 'sorted', lambda self: sorted(self))
 patch(tuple, 'reduce', reduce_sequence)
+patch(tuple, 'percentile', percentile)
+patch(tuple, 'percentiles', percentiles)
 
 
 # My dict functions

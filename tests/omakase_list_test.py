@@ -180,3 +180,49 @@ def test____should_flatten():
 
     expect(words).to(equal("the quick brown fox jumps over the lazy dog".split()))
 
+
+def test____should_iterate_over_consecutive_tuples():
+    words = "the quick brown fox jumps over the lazy dog".split()
+    tuples = words.each_cons(3)
+
+    expect(tuples.first()).to(equal("the quick brown".split()))
+    expect(tuples.last()).to(equal("the lazy dog".split()))
+    expect(tuples).to(have_len(7))
+
+    words = "hello worlds".split()
+
+    expect(words.each_cons(3)).to(be_empty)
+    expect([].each_cons(3)).to(be_empty)
+
+
+def test____should_iterate_over_sliced_tuples():
+    words = "the quick brown fox jumps over the lazy dog".split()
+    tuples = words.each_slice(3)
+
+    expect(tuples.first()).to(equal("the quick brown".split()))
+    expect(tuples.last()).to(equal("the lazy dog".split()))
+    expect(tuples).to(have_len(3))
+
+    words = "hello worlds".split()
+
+    expect(words.each_slice(3)).to(equal([words]))
+    expect([].each_slice(3)).to(be_empty)
+
+
+def test____should_return_percentile():
+    array = [7, 35, 41, 1, 26, 12]
+
+    expect(array.percentile(1.00)).to(equal(41))
+    expect(array.percentile(0.80)).to(equal(35))
+    expect(array.percentile(0.50)).to(equal(12))
+    expect(array.percentile(0.20)).to(equal(7))
+    expect(array.percentile(0.00)).to(equal(1))
+
+
+def test____should_return_percentiles():
+    array = [7, 35, 41, 1, 26, 12]
+
+    expect(array.percentiles(1.00, 0.80, 0.50)).to(equal([41, 35, 12]))
+    expect(array.percentiles()).to(be_empty)
+
+

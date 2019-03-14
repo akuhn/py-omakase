@@ -101,3 +101,33 @@ def flatten(sequence):
 
     return result
 
+
+def each_cons(sequence, n):
+    if n < 1: raise ValueError
+    result = []
+    for i in range(0, sequence.len() - n + 1):
+        result.append(sequence[i : i + n])
+
+    return result
+
+
+def each_slice(sequence, n):
+    if n < 1: raise ValueError
+    result = []
+    for i in range(0, sequence.len(), n):
+        result.append(sequence[i : i + n])
+
+    return result
+
+
+def percentile(sequence, float):
+    if not sequence: return None
+    length = len(sequence) - 1
+    return sorted(sequence)[int(float * length)]
+
+
+def percentiles(sequence, *floats):
+    if not sequence: return None
+    length = len(sequence) - 1
+    sorted_sequence = sorted(sequence)
+    return map(lambda float: sorted_sequence[int(float * length)], floats)
